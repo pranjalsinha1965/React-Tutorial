@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting started with React</title>
+</head>
+<body>
+    <div id='root'>
+        <ul></ul>   
+    </div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        alert('I have JavaScript. Do you?');
+        console.log('Hi there!');
+        
+        const rootElement = document.getElementById('root');
+        console.log(rootElement);
+        
+        rootElement.textContent = 'Getting started with React';
+        rootElement.style.fontSize = '20px'; // font size in pixels
+        
+        const techs = ['HTML', 'CSS', 'JavaScript'];
+        const mappedTechs = techs.map((tech) => <li key={tech}>{tech}</li>);
+        console.log(mappedTechs);
+        
+        const jsx = <h1>This is JSX code</h1>;
+        const title = <h1>Getting Started React</h1>;
+        const title2 = (
+            <div>
+                <h1>Getting Started React</h1>
+                <p>A JavaScript Library</p>
+                <small>Year: 2021</small>
+                <small>Pranjal Sinha</small>
+            </div>
+        );
+        const header = (
+            <header>
+                <h1>Getting Started React</h1>
+                <p>A JavaScript Library</p>
+                <small>Year: 2024</small>
+                <small>Pranjal Sinha</small>
+            </header>
+        );
+        const main = (
+            <main>
+                <p>The basic requirements to get started with React</p>
+                <ul>
+                    {mappedTechs}
+                </ul>
+            </main>
+        );
+        const footer = (
+            <footer>
+                <small>Copyright 2021</small>
+                <small>Pranjal Sinha</small>
+            </footer>
+        );
+        
+        ReactDOM.render(
+            <div>
+                {header}
+                {main}
+                {footer}
+            </div>,
+            rootElement
+        );
+    </script>
+</body>
+</html>

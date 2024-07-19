@@ -6,9 +6,7 @@
     <title>Getting started with React</title>
 </head>
 <body>
-    <div id='root'>
-        <ul></ul>   
-    </div>
+    <div id="root"></div>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -19,6 +17,12 @@
         const rootElement = document.getElementById('root');
         console.log(rootElement);
         
+        // components - are usable ui - functional, class based
+
+        const HeaderComponent = () => {
+            return <h1>I am the header component</h1>;
+        };
+
         rootElement.textContent = 'Getting started with React';
         rootElement.style.fontSize = '20px'; // font size in pixels
         
@@ -27,7 +31,11 @@
         console.log(mappedTechs);
         
         const jsx = <h1>This is JSX code</h1>;
-        const title = <h1>Getting Started React</h1>;
+        const title = "Getting Started React";
+        const subtitle = 'A JavaScript Tutorial';
+        const date = new Date();
+        let firstName = 'Asabeneh';
+        let lastName = 'Yetayeh';
         const title2 = (
             <div>
                 <h1>Getting Started React</h1>
@@ -38,10 +46,12 @@
         );
         const header = (
             <header>
-                <h1>Getting Started React</h1>
-                <p>A JavaScript Library</p>
+                <h1>{title}</h1>
+                <p>{subtitle}</p>
                 <small>Year: 2024</small>
                 <small>Pranjal Sinha</small>
+                <p>Year: {date.getFullYear()}</p>
+                <small>{firstName} {lastName}</small>
             </header>
         );
         const main = (
@@ -61,6 +71,7 @@
         
         ReactDOM.render(
             <div>
+                <HeaderComponent />
                 {header}
                 {main}
                 {footer}

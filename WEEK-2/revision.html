@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting started with React: Revision</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const rootElement = document.getElementById('root');
+        console.log(rootElement);
+        
+        const title = 'Getting Started with React';
+        const subtitle = 'A popular JavaScript Library';
+        let firstName = 'Asabeneh';
+        let lastName = 'Yetayeh';
+        let year = new Date().getFullYear();
+        
+        const header = (
+            <header>
+                <h1>{title}</h1>
+                <h2>{subtitle}</h2>
+                <p>Author: {firstName} {lastName}</p>
+                <small>Year: {year}</small>
+            </header>
+        );
+        
+        //component
+
+        const headerNext = () => {
+            return headerNext
+        }
+        const skills = ['HTML', 'CSS', 'JavaScript'];
+        
+        const main = (
+            <main>
+                <p>2 + 3 = {2 + 3}</p>
+                <p>2 ^ 3 = {2 ** 3}</p>
+                <p>Prerequisite to get started with React</p>
+                <p>Number of skills: {skills.length}</p>
+                <ul>
+                    {skills.map((skill, index) => (
+                        <li key={index}>{skill}</li>
+                    ))}
+                </ul>
+            </main>
+        );
+        
+        const footer = (
+            <footer>
+                <p>Copyright &copy; {year} by {firstName} {lastName}</p>
+            </footer>
+        );
+        
+        const app = (
+            <div>
+                {header}
+                {main}
+                {footer}
+            </div>);
+        
+        ReactDOM.render(app, rootElement);
+
+    </script>
+</body>
+</html>
